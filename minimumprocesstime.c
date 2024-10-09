@@ -4,7 +4,7 @@
 int main(){
     int data[]={4,4,6,2,5};
     int pta=2;
-    int ptb=3;;
+    int ptb=3;
     int sumb=0;
     for(int i=0;i<5;i++){
         sumb+=ptb*data[i];
