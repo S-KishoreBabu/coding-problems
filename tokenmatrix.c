@@ -1,18 +1,18 @@
-#include<stdio.h>
+#include<stdio.h>//completed
 #include<stdlib.h>
 #include<stdlib.h>
 
 int main(){
-    int arr[4][3]={
+    int arr[6][3]={
         {0,1,1},
         {0,2,2},
         {1,1,5},
         {1,2,6},
-        {0,3,1}
-        }
+        {0,3,1},
+        {1,3,3}
     };
     int elimit=4;
-    int rows = 5;  
+    int rows = 6;  
 
     int tn,val,N;
 
