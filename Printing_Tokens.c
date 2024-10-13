@@ -34,7 +34,7 @@ int main() {
                 //len++;
             }
         printf("\n\nword = %s",word);
-        i=i+1;
+        i++;
     }
     return 0;
 }
