@@ -16,8 +16,8 @@ int main(){
             cut=th-h;
         }
         printf("\n cut = %d",cut);
-        h=h-cut;
-        hf=hf+1;
+        h-=cut;
+        hf+=1;
     }
 
     printf("\n HF : %d",hf);
