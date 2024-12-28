@@ -1,4 +1,4 @@
-#include<stdio.h>// not completed
+#include<stdio.h>// not completed (eliminate the charecters from given string to given prefix and suffx word by  same prefix  charecter and suffix charecter in both strings)
 #include<string.h>
 #include<strings.h>
 
