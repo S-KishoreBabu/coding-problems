@@ -1,4 +1,4 @@
-completed - Leetcode : 2381
+//completed - Leetcode : 2381
 
 int maxScore(char* s) {
     int n = strlen(s),sum,split,max=0;
