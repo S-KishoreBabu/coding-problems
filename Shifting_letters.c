@@ -1,9 +1,9 @@
+completed - Leetcode : 2381
+
 int maxScore(char* s) {
-    int n = strlen(s);
-    int sum,split,max=0;
+    int n = strlen(s),sum,split,max=0;
     for(int i = 0;i<n-1;i++){
-        split=i+1;
-        sum=0;
+        split=i+1,sum=0;
         for(int j=0;j<n;j++){
             if(j<split){
                 if(s[j]=='0'){sum++;}
