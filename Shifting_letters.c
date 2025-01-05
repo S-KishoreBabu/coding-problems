@@ -1,7 +1,6 @@
 int maxScore(char* s) {
     int n = strlen(s);
-    int sum,split;
-    int max=0;
+    int sum,split,max=0;
     for(int i = 0;i<n-1;i++){
         split=i+1;
         sum=0;
