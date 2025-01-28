@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-int removeDuplicates(int* nums, int numsSize) {
+int* finalPrices(int* prices, int pricesSize, int* returnSize) {
     int* result = (int*)malloc(pricesSize * sizeof(int));
     int stack[pricesSize];
     int top = -1;
@@ -23,8 +23,18 @@ int removeDuplicates(int* nums, int numsSize) {
     return result;
 }
 
-int main(){
-    
-    system("cls");
+int main() {
+    int prices[] = {8, 4, 6, 2, 3};
+    int pricesSize = sizeof(prices) / sizeof(prices[0]);
+    int returnSize;
+
+    int* finalPricesArray = finalPrices(prices, pricesSize, &returnSize);
+    printf("Final Prices: ");
+    for (int i = 0; i < returnSize; i++) {
+        printf("%d ", finalPricesArray[i]);
+    }
+    printf("\n");
+
+    free(finalPricesArray); // Free the allocated memory
     return 0;
 }
