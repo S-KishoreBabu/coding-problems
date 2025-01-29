@@ -10,16 +10,46 @@ int matrix[3][3]={
     {7, 8, 9}
 };
 
+void shuffleMatrix(){
+    int i, j, count=0;
+    if(count%2==0){
+        for (i = 0; i < 3; i++) {
+            for (j = 0; j < 3; j++) {
+                if(j!=2){
+                    matrix[i][j]=matrix[i][j+1];
+                }
+                else{
+                    matrix[i][j]=matrix[i][0];
+                }
+            }
+        }
+    }
+    else{
+        for (i = 0; i < 3; i++) {
+            for (j = 0; j < 3; j++) {
+                if(i!=2){
+                    matrix[i][j]=matrix[i+1][j];
+                }
+                else{
+                    matrix[i][j]=matrix[0][j];
+                }
+            }
+        }
+    }
+            
+}
+
+
 
 int areAdjacent( int a, int b) {
     int rows=3,cols=3;
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
             if (matrix[i][j] == a) {
-                if ((i > 0 && matrix[i-1][j] == b) ||   // Top
-                    (i < rows-1 && matrix[i+1][j] == b) || // Bottom
-                    (j > 0 && matrix[i][j-1] == b) ||   // Left
-                    (j < cols-1 && matrix[i][j+1] == b)) { // Right
+                if ((i > 0 && matrix[i-1][j] == b) ||   
+                    (i < rows-1 && matrix[i+1][j] == b) 
+                    (j > 0 && matrix[i][j-1] == b) ||  
+                    (j < cols-1 && matrix[i][j+1] == b)) {
                     return 1;
                 }
             }
