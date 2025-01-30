@@ -4,15 +4,15 @@
 
 #define TABLE_SIZE 10
 
-// typedef struct lNode {
-//     int key;
-//     int value;
-//     struct lNode *next;
-// };
+typedef struct lNode{
+    int key;
+    int data;
+    struct lNode *next;
+};
 
-// struct lNode *hashTable[TABLE_SIZE];
+struct lNode *hashTable[TABLE_SIZE];
 
-// typedef struct lode node;
+typedef struct lode node;
 
 
 
@@ -91,51 +91,51 @@ int areAdjacent(int a, int b) {
 //     return 0;
 // }
 
-// void generate_hashMap(){
-//     int rows = 3, cols = 3;
-//     for (int i = 0; i < rows; i++) {
-//         for (int j = 0; j < cols; j++) {
-//             if (matrix[i][j] == a) {
-//                 if (i > 0 ){
-//                     pushmap(matrix[i][j],matrix[i-1][j]);
-//                 } 
-//                 if(i < rows - 1 ){
-//                     pushmap(matrix[i][j],matrix[i+1][j]);
-//                 }
-//                 if(j > 0 ){
-//                     pushmap(matrix[i][j],matrix[i][j-1]);
-//                 } 
-//                 if(j < cols - 1 ){
-//                     pushmap(matrix[i][j],matrix[i][j+1]);
-//                 }
-//             }
-//         }
-//     }
-// }
+void generate_hashMap(){
+    int rows = 3, cols = 3;
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            if (matrix[i][j] == a) {
+                if (i > 0 ){
+                    pushmap(matrix[i][j],matrix[i-1][j]);
+                } 
+                if(i < rows - 1 ){
+                    pushmap(matrix[i][j],matrix[i+1][j]);
+                }
+                if(j > 0 ){
+                    pushmap(matrix[i][j],matrix[i][j-1]);
+                } 
+                if(j < cols - 1 ){
+                    pushmap(matrix[i][j],matrix[i][j+1]);
+                }
+            }
+        }
+    }
+}
 
-// int hashFunction(int key) {
-//     return key % TABLE_SIZE;
-// }
+int hashFunction(int key) {
+    return key % TABLE_SIZE;
+}
 
 
 
-// void pushmap(int key, int value) {
-//     int hashIndex = hashFunction(key);
-//     Node *newNode = (Node *) malloc(sizeof(Node));
-//     newNode->key = key;
-//     newNode->value = value;
-//     newNode->next = NULL;
+void pushmap(int key_val, int val) {
+    int hashIndex = hashFunction(key);
+    node *newNode = (node *) malloc(sizeof(node));
+    newNode->key = key_val;
+    newNode->data = val;
+    newNode->next = NULL;
 
-//     if (hashTable[hashIndex] == NULL) {
-//         hashTable[hashIndex] = newNode;
-//     } else {
-//         Node *temp = hashTable[hashIndex];
-//         while (temp->next != NULL) {
-//             temp = temp->next;
-//         }
-//         temp->next = newNode;
-//     }
-// }
+    if (hashTable[hashIndex] == NULL) {
+        hashTable[hashIndex] = newNode;
+    } else {
+        node *temp = hashTable[hashIndex];
+        while (temp->next != NULL) {
+            temp = temp->next;
+        }
+        temp->next = newNode;
+    }
+}
 
 
 
@@ -150,8 +150,8 @@ int totaltime(int *nums, int numsSize){
                 sum += 2;
             }
         }
-        shuffleMatrix();
-        display_matrix();
+        //shuffleMatrix();
+        //display_matrix();
     }
     return sum;
 }
@@ -167,7 +167,7 @@ void display_matrix(){
 }
 
 int main(){
-    int nums[] = {2, 2, 2, 2, 2, 2};
+    int nums[] = {4,5,1,2,9,9,8};
     int numsSize = sizeof(nums) / sizeof(nums[0]);
     system("cls");
     printf("\n Total seconds = %d\n", totaltime(nums, numsSize));
