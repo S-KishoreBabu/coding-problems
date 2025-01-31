@@ -26,13 +26,32 @@ int pop(){
 }
 
 void display(){
-    for(int i=top;i>=0;i--){
+    for(int i=0;i<=top;i++){
         printf("%d ",stack[i]);
+    }
+}
+
+void remdig(char *str,int size,int k){
+    for(int i=1;i<size;i++){
+        n=convertAlphatoNumeric(str[i]);
+        while(top!=-1 && k>0 && n<stack[top]){
+            pop();
+            k--;
+        }
+        push(n);
+    }
+    while(top!=-1 && k>0){
+        pop();
+        k--;
     }
 }
 
 void removeDigits(char *str,int size,int k){
     int n;
+    if(str[0]=='-'){
+        remdig(str,size,k);
+        return;
+    }
     for(int i=0;i<size;i++){
         n=convertAlphatoNumeric(str[i]);
         while(top!=-1 && k>0 && n<stack[top]){
@@ -54,7 +73,7 @@ int convertAlphatoNumeric(char ch){
 }
 
 int main(){
-    char str[]="-84362";
+    char str[]="1432219";
     int len=strlen(str);
     system("cls");
     removeDigits(str,len,3);
