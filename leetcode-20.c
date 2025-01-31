@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<string.h>
 #include<stdbool.h>
-
+//Not completed
 char stack[100];
 int top=-1;
 
