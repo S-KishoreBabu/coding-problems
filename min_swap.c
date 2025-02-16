@@ -1,3 +1,5 @@
+// completed 
+
 #include <stdio.h>// completed
 #include <math.h>
 #include <stdlib.h>
