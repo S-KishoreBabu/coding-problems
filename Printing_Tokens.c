@@ -1,4 +1,4 @@
-#include <stdio.h>// not completed
+#include <stdio.h>// not completed yet
 #include <string.h>
 #include <math.h>
 #include <stdlib.h>
@@ -7,7 +7,7 @@
 //     //int x=strlen(word);
 //     //printf("\n lendth =%d",x);
 //     word=ch;
-//     // printf("attached : %s",word);
+    // printf("attached : %s",word);
 //     return word;
 // }
 
