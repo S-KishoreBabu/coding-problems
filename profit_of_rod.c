@@ -1,4 +1,4 @@
-#include<stdio.h>// not yet started
+#include<stdio.h>// not started yet
 #include<stdlib.h>
 
 struct rod{
