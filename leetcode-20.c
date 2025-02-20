@@ -1,8 +1,10 @@
+//Not completed
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
 #include<stdbool.h>
-//Not completed
+
 char stack[100];
 int top=-1;
 
@@ -36,11 +38,10 @@ bool isValid(char* s) {
 }
 
 int main(){
-    char s[] = "([])";
+    char s[] = "([]{}";
     system("cls");
     if(isValid(s)){
         printf("%s is a valid expression\n", s);
     }
-
     return 0;
 }

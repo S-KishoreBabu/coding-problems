@@ -1,3 +1,5 @@
+// Completed - leetcode problem 28
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
@@ -14,17 +16,16 @@ int strStr(char* haystack, char* needle) {
         if(haystack[i] == needle[j]){
             if(j==0){
                 start = i;
-                printf("\n start is %d",start);
             }
             j++;
             if(j== strlen(needle)){
-                return start;
+                break;
             }
         }
         else{
             if(j>0){
                 j=0;
-                i = start+1;
+                i = start;
                 start = -1;
             }
         }
@@ -34,7 +35,7 @@ int strStr(char* haystack, char* needle) {
 
 int main(){
     char haystack[] = "mississippi";
-    char needle[] =       "issip";
+    char needle[] ="pi";
     system("cls");
     printf("\n Result : %d",strStr(haystack,needle));
     return 0;

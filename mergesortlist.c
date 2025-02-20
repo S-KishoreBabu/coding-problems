@@ -1,4 +1,5 @@
-#include <stdio.h> //completed
+//completed - merging two sorted linked list array
+#include <stdio.h> 
 #include <stdlib.h>
 
 typedef struct ListNode {
