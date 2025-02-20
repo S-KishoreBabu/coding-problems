@@ -33,7 +33,7 @@ void display(){
 
 void remdig(char *str,int size,int k){
     for(int i=1;i<size;i++){
-        n=convertAlphatoNumeric(str[i]);
+        int n=convertAlphatoNumeric(str[i]);
         while(top!=-1 && k>0 && n<stack[top]){
             pop();
             k--;
