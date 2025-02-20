@@ -40,7 +40,6 @@ void remdig(char *str,int size,int k){
         }
         push(n);
     }
-    
     while(top!=-1 && k>0){
         pop();
         k--;
