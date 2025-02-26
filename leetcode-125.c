@@ -4,7 +4,7 @@
 
 
 char *removeAlphaNumeric(char *arr){
-    char *string = (char*)malloc(strlen(arr));
+    char *string = (char*)malloc(strlen(arr)+1);
     int j=0;
     for(int i=0;i<strlen(arr);i++){
         if(isalpha(arr[i])){
