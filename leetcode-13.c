@@ -66,7 +66,7 @@ int romanToInt(char* s) {
 }
 
 int main(){
-    char str[]="III";
+    char str[]="VIIV";
     system("cls");
     int result = romanToInt(str);
     printf("\n result = %d ",result);

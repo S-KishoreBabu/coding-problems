@@ -1,175 +1,40 @@
-#include<stdio.h> // Not yet completed
+#include<stdio.h>
 #include<stdlib.h>
-#include<stdbool.h>
-
-#define TABLE_SIZE 10
-
-// typedef struct lNode {
-//     int key;
-//     int value;
-//     struct lNode *next;
-// };
-
-// struct lNode *hashTable[TABLE_SIZE];
-
-// typedef struct lode node;
+#include<string.h>
 
 
 
-
-int areAdjacent(int,int);
-void display_matrix();
-
-int matrix[3][3]={
-    {1, 2, 3},
-    {4, 5, 6},
-    {7, 8, 9}
-};
-
-void shuffleMatrix(){
-    static int count = 0,temp;
-    //count++; 
-    if(count % 2 == 0){
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                if(j != 2){
-                    if(j==0){temp=matrix[i][j];}
-                    matrix[i][j] = matrix[i][j + 1];
-                } 
-                else {
-                    matrix[i][j] = temp;
-                }
-            }
+char* mergeAlternately(char * word1, char * word2){
+    int n = strlen(word1)+strlen(word2);
+    char *arr=(char*)malloc((sizeof(char)*n)+1);
+    printf("arr[0] = %c",arr[0]);
+    int j=0;
+    int k=0;
+    int i=0;
+    while(i<n){
+        
+        if(j<strlen(word1)){
+            arr[i]=word1[j];
+            j++;
+            i++;
         }
-    } else {
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                if(j != 2){
-                    if(j==0 && i==0){temp=matrix[i][j];}
-                    matrix[i][j] = matrix[i][j + 1];
-                } else {
-                    matrix[i][j] = matrix[i+1][0];
-                    if(i==2 & j==2){matrix[i][j] = temp;}
-                }
-            }
+        printf("\n arr[%d] = %c",i,arr[i]);
+        if(k<strlen(word2)){
+            arr[i]=word2[k];
+            k++;
+            i++;
+
         }
+        printf("\n arr[%d] = %c",i,arr[i]);
+        
     }
-}
-
-int areAdjacent(int a, int b) {
-    int rows = 3, cols = 3;
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            if (matrix[i][j] == a) {
-                if ((i > 0 && matrix[i - 1][j] == b) ||   
-                    (i < rows - 1 && matrix[i + 1][j] == b) || 
-                    (j > 0 && matrix[i][j - 1] == b) ||  
-                    (j < cols - 1 && matrix[i][j + 1] == b)) {
-                    return 1;
-                }
-            }
-        }
-    }
-    return 0;
-}
-
-
-// int areAdjacentHash(int a, int b) {
-//     int rows = 3, cols = 3;
-//     for (int i = 0; i < rows; i++) {
-//         for (int j = 0; j < cols; j++) {
-//             if (matrix[i][j] == a) {
-//                 if ((i > 0 && matrix[i - 1][j] == b) ||   //up
-//                     (i < rows - 1 && matrix[i + 1][j] == b) || //down
-//                     (j > 0 && matrix[i][j - 1] == b) ||  //l
-//                     (j < cols - 1 && matrix[i][j + 1] == b)) {r//ight
-//                     return 1;
-//                 }
-//             }
-//         }
-//     }
-//     return 0;
-// }
-
-// void generate_hashMap(){
-//     int rows = 3, cols = 3;
-//     for (int i = 0; i < rows; i++) {
-//         for (int j = 0; j < cols; j++) {
-//             if (matrix[i][j] == a) {
-//                 if (i > 0 ){
-//                     pushmap(matrix[i][j],matrix[i-1][j]);
-//                 } 
-//                 if(i < rows - 1 ){
-//                     pushmap(matrix[i][j],matrix[i+1][j]);
-//                 }
-//                 if(j > 0 ){
-//                     pushmap(matrix[i][j],matrix[i][j-1]);
-//                 } 
-//                 if(j < cols - 1 ){
-//                     pushmap(matrix[i][j],matrix[i][j+1]);
-//                 }
-//             }
-//         }
-//     }
-// }
-
-// int hashFunction(int key) {
-//     return key % TABLE_SIZE;
-// }
-
-
-
-// void pushmap(int key, int value) {
-//     int hashIndex = hashFunction(key);
-//     Node *newNode = (Node *) malloc(sizeof(Node));
-//     newNode->key = key;
-//     newNode->value = value;
-//     newNode->next = NULL;
-
-//     if (hashTable[hashIndex] == NULL) {
-//         hashTable[hashIndex] = newNode;
-//     } else {
-//         Node *temp = hashTable[hashIndex];
-//         while (temp->next != NULL) {
-//             temp = temp->next;
-//         }
-//         temp->next = newNode;
-//     }
-// }
-
-
-
-
-int totaltime(int *nums, int numsSize){
-    int sum = 1;
-    for(int i = 0; i < numsSize - 1; i++){
-        if(nums[i] != nums[i + 1]){
-            if(areAdjacent(nums[i], nums[i + 1])){
-                sum++;
-            } else {
-                sum += 2;
-            }
-        }
-        shuffleMatrix();
-        display_matrix();
-    }
-    return sum;
-}
-
-void display_matrix(){
-    printf("\n");
-    for(int i = 0; i < 3; i++){
-        for(int j = 0; j < 3; j++){
-            printf("%d ", matrix[i][j]);
-        }
-        printf("\n");
-    }
+    return arr;
 }
 
 int main(){
-    int nums[] = {2, 2, 2, 2, 2, 2};
-    int numsSize = sizeof(nums) / sizeof(nums[0]);
+    char word1[] = "abc";
+    char word2[] = "pqr";
     system("cls");
-    printf("\n Total seconds = %d\n", totaltime(nums, numsSize));
+    printf("\n %s",mergeAlternately(word1, word2));
     return 0;
 }
