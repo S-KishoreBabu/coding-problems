@@ -1,6 +1,6 @@
 
 // find the number of folds by 
-#include<stdio.h>//not completed
+#include<stdio.h>//not completed yet
 #include<stdlib.h>
 
 int main(){
