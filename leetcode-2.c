@@ -1,4 +1,4 @@
-// Completed - leetcode - 2
+// * Not completed - leetcode - 2
 
 #include<stdlib.h>
 #include<stdio.h>
@@ -8,15 +8,17 @@ struct ListNode {
 };
 
 struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2);
+struct ListNode* addTwoNumbers2(struct ListNode* l1, struct ListNode* l2);
 void printList(struct ListNode* head);
 struct ListNode* createList(int arr[], int size);
 
 struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) {
-    int numberValue(struct ListNode* list){
-        int sum = 0;
-        int k = 1;
+    unsigned long numberValue(struct ListNode* list){
+        unsigned long long sum = 0;
+        unsigned long long k = 1;
         void merge(int val){
             sum+=(val*k);
+            printf("\n -> %lld\n",sum);
             k*=10;
         }
         struct ListNode* temp = list;
@@ -24,10 +26,11 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) {
             merge(temp->val);
             temp = temp -> next;
         }
+        printf("\n value : %lld\n",sum);
         return sum;
     }
 
-    int sum = numberValue(l1)+numberValue(l2),temp = sum,t,count=0;
+    unsigned long long sum = numberValue(l1)+numberValue(l2),temp = sum,t,count=0;
     struct ListNode* head = NULL;
     struct ListNode* tail = NULL;
     void append(int x){
@@ -57,12 +60,24 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) {
     return head;
 }
 
+struct ListNode* addTwoNumbers2(struct ListNode* l1, struct ListNode* l2){
+    while(l1 !=NULL && l2 != NULL){
+        int a=0, b=0;
+        while(l1!=NULL){
+            l1 = l1->next;
+        }
+    }
+}
+
+
+
+
 int main() {
     // Example input: 342 (represented as 2 -> 4 -> 3) and 465 (5 -> 6 -> 4)
-    int arr1[] = {9};
-    int arr2[] = {1,9,9,9,9,9,9,9,9,9};
+    int arr1[] = {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1};
+    int arr2[] = {5,6,4};
     
-    struct ListNode* l1 = createList(arr1, 3);
+    struct ListNode* l1 = createList(arr1, 31);
     struct ListNode* l2 = createList(arr2, 3);
     
     printf("First List: ");
