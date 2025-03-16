@@ -60,7 +60,7 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) {
     return head;
 }
 
-struct ListNode* addTwoNumbers2(struct ListNode* l1, struct ListNode* l2){
+struct ListNode* addTwoNumbers2(struct ListNode* l1, struct ListNode* l2){  // TODO : Need to complete here for above 30 digit number input
     while(l1 !=NULL && l2 != NULL){
         int a=0, b=0;
         while(l1!=NULL){
