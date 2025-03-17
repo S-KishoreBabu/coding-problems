@@ -38,7 +38,7 @@ int pop(){
         return x;
     }
     printf("\n Stack is Empty");
-}
+} 
 
 char popch(){
     if(chtop!=-1){
