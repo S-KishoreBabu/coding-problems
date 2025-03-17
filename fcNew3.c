@@ -53,7 +53,7 @@ void display(){
     for(int i=0;i<=top;i++){
         printf("%d ",stack[i]);
     }
-} 
+}  
 
 int precedence(char op) {
     if (op == '+' || op == '-') return 1;
