@@ -48,7 +48,7 @@ char popch(){
     }
     printf("\n Stack is Empty");
 }
-
+ 
 void display(){
     for(int i=0;i<=top;i++){
         printf("%d ",stack[i]);
