@@ -1,4 +1,4 @@
-// Completed - leetcode problem 28
+// Completed  leetcode problem 28
 
 #include<stdio.h>
 #include<stdlib.h>
