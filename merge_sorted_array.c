@@ -29,7 +29,7 @@ int main(){
         while(s1<n1){
             printf("%d ",a[s1]);
             s1=s1+1;
-        }
+        } 
     }
     if(s2<n2){
         while(s2<n2){
