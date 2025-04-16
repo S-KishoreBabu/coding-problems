@@ -1,9 +1,10 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-void swap(int,int,int,int);
+void swap(int*,int*,int*,int*);
+void display();
 
-int arr[][]= {
+int arr[3][3]= {
     {1,2,3},
     {4,5,6},
     {7,8,9}
@@ -21,14 +22,14 @@ void swap(int *a,int *b,int *c,int *d ){
 void migrate(int i, int j){
     swap(
         &arr[i][j],
-        &arr[i][n-j],
-        &arr[j][i],
-        &arr[n-j][i]
+        &arr[j][(n-1)-i],
+        &arr[(n-1)-i][(n-1)-j],
+        &arr[(n-1)-j][i]
     );
 }
 void rotate(){
     for(int i = 0;i<n/2;i++){
-        for(int j = 0;j<n/2;j++){
+        for(int j = 0;j<(n + 1)/2;j++){
             migrate(i,j);
         }
     }
@@ -41,10 +42,13 @@ void display(){
         }
         printf("\n");
     }
+    printf("\n");
 }
 
 
 int main(){
+    display();
+    rotate();
     display();
     return 0;
 }
