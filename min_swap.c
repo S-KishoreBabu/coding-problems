@@ -11,26 +11,14 @@ int arr[3][3]= {
 };
 int n = 3;
 
-void swap(int *a,int *b,int *c,int *d ){
-    int temp = *a;
-    *a = *d;
-    *d = *c;
-    *c = *b;
-    *b = temp;
-}
-
-void migrate(int i, int j){
-    swap(
-        &arr[i][j],
-        &arr[j][(n-1)-i],
-        &arr[(n-1)-i][(n-1)-j],
-        &arr[(n-1)-j][i]
-    );
-}
 void rotate(){
     for(int i = 0;i<n/2;i++){
         for(int j = 0;j<(n + 1)/2;j++){
-            migrate(i,j);
+            int temp = arr[i][j];
+            arr[i][j] = arr[(n-1)-j][i];
+            arr[(n-1)-j][i] = arr[(n-1)-i][(n-1)-j];
+            arr[(n-1)-i][(n-1)-j] = arr[j][(n-1)-i];
+            arr[j][(n-1)-i]= temp;
         }
     }
 }

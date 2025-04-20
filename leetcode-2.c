@@ -1,4 +1,4 @@
-// * Not completed - leetcode - 2
+// * Not completed yet - leetcode - 2
 
 #include<stdlib.h>
 #include<stdio.h>
