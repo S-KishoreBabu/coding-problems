@@ -1,2 +1,2 @@
-printf("Enter the postfix expression: ");
-    // sc
+head->next->next->next->val = 1;
+    // he
